@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {ScrollView, View, StyleSheet, Platform, RefreshControl, ViewPropTypes} from 'react-native';
 import {shallowEqual, swapArrayElements} from './utils';
@@ -13,7 +13,7 @@ function uniqueRowKey(key) {
 
 uniqueRowKey.id = 0
 
-export default class SortableList extends Component {
+export default class SortableList extends PureComponent {
   static propTypes = {
     data: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
     order: PropTypes.arrayOf(PropTypes.any),
